@@ -1,4 +1,4 @@
-﻿// Declare an array, and fill it with random values.
+﻿// Creating arrays
 
 // Генерация
 int[] RandArr()
@@ -21,14 +21,14 @@ int[] RandArr()
 // Вывод
 void PrintArr(int[] arr)
 {
-    Console.WriteLine(String.Empty);
+    Console.WriteLine();
     for (int i = 0; i < arr.Length; i++)
     {
         Console.Write($"{arr[i]} ");
         
     }
-    Console.WriteLine(String.Empty);
-    Console.WriteLine(String.Empty);
+    Console.WriteLine();
+    Console.WriteLine();
 }
 
 // Вызов методов
@@ -57,12 +57,54 @@ double[] RandArr()
 // Вывод double
 void PrintArr(double[] arr)
 {
-    Console.WriteLine(String.Empty);
+    Console.WriteLine();
     for (int i = 0; i < arr.Length; i++)
     {
         Console.Write($"{arr[i]} ");
         
     }
-    Console.WriteLine(String.Empty);
-    Console.WriteLine(String.Empty);
+    Console.WriteLine();
+    Console.WriteLine();
+}
+
+
+// Генерируем 2d массив
+int[,] RandArr2D()
+{
+    Console.WriteLine();
+    Console.WriteLine("Generating a 2d array..");
+    Console.Write("Enter array rows number: ");
+    int row = int.Parse(Console.ReadLine()!);
+    Console.Write("Enter array columns number: ");
+    int col = int.Parse(Console.ReadLine()!);
+    Console.Write("Enter minimal range value: ");
+    int min = int.Parse(Console.ReadLine()!);
+    Console.Write("Enter maximum range value: ");
+    int max = int.Parse(Console.ReadLine()!);
+
+    int[,] arr = new int[row, col];
+    Random rand = new Random();
+
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
+            arr[i, j] = rand.Next(min, max + 1);
+        }
+    }
+    return arr;
+}
+
+// Вывод 2d массива
+void PrintArr2D(int[,] arr)
+{    
+    for (int row = 0; row < arr.GetLength(0); row++)
+    {
+        for (int col = 0; col < arr.GetLength(1); col++)
+        {
+            Console.Write($"{arr[row, col]} ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
 }
