@@ -1,5 +1,14 @@
 ﻿// Creating arrays
 
+// Запрос ввода числа с консоли
+int Prompt(string message)
+{
+    System.Console.Write(message);
+    string value = Console.ReadLine();
+    int result = Convert.ToInt32(value);
+    return result;
+}
+
 // Генерация
 int[] RandArr()
 {
